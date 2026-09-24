@@ -3,7 +3,7 @@
 // Команда: Багаев (в. 7, техлид); Губин (в. 72, разработчик)
 #include <iostream>
 #include <windows.h>
-
+#include "bagaev.h"
 // === БЛОК ПОДКЛЮЧЕНИЙ: каждый участник добавляет свой заголовочный файл ===
 #include "gubin.h"
 // === КОНЕЦ БЛОКА ПОДКЛЮЧЕНИЙ ===
@@ -14,29 +14,59 @@ int main() {
 	SetConsoleOutputCP(CP_UTF8);
 	int choice;
 	double value;
+	double legA, legB;
 	do {
 		cout << "\n=== Командный проект: сборник расчётов ===\n";
 		// === БЛОК МЕНЮ: каждый участник добавляет свои пункты ===
-		cout << "1. Дни ↔ часы\n";
-		cout << "2. Часы ↔ минуты\n";
-		cout << "3. Минуты ↔ дни\n";
+		cout << "1. Нахождение гипотенузы в прямоугольном треугольнике\n";
+		cout << "2. Нахождение площади прямоугольного треугольника\n";
+		cout << "3. Дни ↔ часы\n";
+		cout << "4. Часы ↔ минуты\n";
+		cout << "5. Минуты ↔ дни\n";
 		// === КОНЕЦ БЛОКА МЕНЮ ===
 		cout << "0. Выход\n";
 		cout << "Выберите пункт: ";
 		cin >> choice;
+
 		switch (choice) {
-			// === БЛОК ОБРАБОТКИ: каждый участник добавляет свои case ===
+		// === БЛОК ОБРАБОТКИ: каждый участник добавляет свои case ===
 		case 1:
+
+			do {
+				cout << "Введите катеты a и b: ";
+				cin >> legA >> legB;
+
+				if (legA <= 0 || legB <= 0) {
+					cout << "Введены неположительные значения катетов.\n";
+				}
+			} while (legA <= 0 || legB <= 0);
+
+			cout << "Гипотенуза = " << hypotenuse(legA, legB) << "\n";
+			break;
+		case 2:
+
+			do {
+				cout << "Введите катеты a и b: ";
+				cin >> legA >> legB;
+
+				if (legA <= 0 || legB <= 0) {
+					cout << "Введены неположительные значения катетов.\n";
+				}
+			} while (legA <= 0 || legB <= 0);
+
+			cout << "Площадь = " << rightTriangleArea(legA, legB) << "\n";
+			break;
+		case 3:
 			cout << "Введите количество дней: ";
 			cin >> value;
 			cout << "В часах = " << daysToHours(value) << "\n";
 			break;
-		case 2:
+		case 4:
 			cout << "Введите количество часов: ";
 			cin >> value;
 			cout << "В минутах = " << hoursToMinutes(value) << "\n";
 			break;
-		case 3:
+		case 5:
 			cout << "Введите количество минут: ";
 			cin >> value;
 			cout << "В днях = " << minutesToDays(value) << "\n";
@@ -48,6 +78,8 @@ int main() {
 		default:
 			cout << "Такого пункта нет.\n";
 		}
+
 	} while (choice != 0);
+
 	return 0;
 }
