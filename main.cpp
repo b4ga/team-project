@@ -13,7 +13,7 @@ using namespace std;
 int main() {
 	SetConsoleOutputCP(CP_UTF8);
 	int choice;
-	double x;
+	double value;
 	do {
 		cout << "\n=== Командный проект: сборник расчётов ===\n";
 		// === БЛОК МЕНЮ: каждый участник добавляет свои пункты ===
@@ -28,18 +28,18 @@ int main() {
 			// === БЛОК ОБРАБОТКИ: каждый участник добавляет свои case ===
 		case 1:
 			cout << "Введите количество дней: ";
-			cin >> x;
-			cout << "В часах = " << daysToHours(x) << "\n";
+			cin >> value;
+			cout << "В часах = " << daysToHours(value) << "\n";
 			break;
 		case 2:
 			cout << "Введите количество часов: ";
-			cin >> x;
-			cout << "В минутах = " << hoursToMinutes(x) << "\n";
+			cin >> value;
+			cout << "В минутах = " << hoursToMinutes(value) << "\n";
 			break;
 		case 3:
 			cout << "Введите количество минут: ";
-			cin >> x;
-			cout << "В днях = " << minutesToDays(x) << "\n";
+			cin >> value;
+			cout << "В днях = " << minutesToDays(value) << "\n";
 			break;
 			// === КОНЕЦ БЛОКА ОБРАБОТКИ ===
 		case 0:

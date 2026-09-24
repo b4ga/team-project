@@ -1,16 +1,16 @@
 #include "gubin.h"
 
-double daysToHours(double d)
+double daysToHours(double days)
 {
-	return d * 24;
+	return days * 24;
 }
 
-double hoursToMinutes(double h)
+double hoursToMinutes(double hours)
 {
-	return h * 60;
+	return hours * 60;
 }
 
-double minutesToDays(double d)
+double minutesToDays(double days)
 {
-	return d / 1440;
+	return days / 1440;
 }
